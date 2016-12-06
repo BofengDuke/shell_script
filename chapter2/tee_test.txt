@@ -1,0 +1,1 @@
+echo xxx | tee tee_test.txt
