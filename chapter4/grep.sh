@@ -64,9 +64,16 @@ echo "hello this is cool" | grep -f pat_file
 grep "main()" . -r --include *.{c,cpp}
 
 # xargs 可以将文件名列表作为命令行参数提供给其他命令
-# 
 grep "test" file* -lZ | xargs -0 rm
 
+# -A,打印匹配某个结果之后的3行
+seq 10 | grep 5 -A 3
+
+# -B,打印某个结果前3行
+seq 10 | grep 5 -B 3
+
+# -C,打印某个结果前后2行
+seq 10 | grep 5 -C 2
 
 
 
