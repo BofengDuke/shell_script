@@ -33,6 +33,16 @@ echo -e "line1 f2 f3\nline2 f4 f5\nline3 f6 f7" | awk '
     print "Line no:" NR ",No of fields:" NF ,"$0= "$0, "$1= "$1, "$2= "$2, "$3= "$3
 }'
 
+# 下面的代码中，echo 会生成一个空白行，变量comout包含命令 grep root /etc/passwd 的输出，然后打印包含root的行
+# grep 默认下会读取所有的行，awk 中的 getline 可以只读取某一行
+echo | awk '{grep root /etc/passwd" | getline cmdout;print cmdout }'
+
+
+# awk 中的for循环有两种方式
+# for(i=0;i<10;i++) {print $i;}
+# for(i in array) {print array[i];}
+
+
 
 
 
