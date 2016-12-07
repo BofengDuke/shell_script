@@ -48,4 +48,5 @@ sed 'expression; expression'
 text=hello
 echo hello world | sed 's/$text/HELLO/'
 
-
+# 移除某一段话中的 包含moblie phones的句子
+sed '/s/ [^.]*moblie phones[^.]*\.//g' file

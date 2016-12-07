@@ -43,7 +43,11 @@ echo | awk '{grep root /etc/passwd" | getline cmdout;print cmdout }'
 # for(i in array) {print array[i];}
 
 
+# 模拟head 命令读取文件前N行
+awk 'NR <= 3' file
 
+# 模拟tail 打印后十行
+awk '{ buffer[NR % 10] = $0;} END{ for(i=0;i<11;i++){[print buffer[ i%10 ]}}' file
 
 
 
